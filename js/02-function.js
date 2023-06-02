@@ -9,6 +9,9 @@ Parašyti funkcijas, kurios atitinka pateiktus reikalavimus, jei įvykdo reikiam
 
 // Funkcija pavadinimu “tusciaFunkcija”:
 // nepriima jokių kintamųjų
+
+tusciaFunkcija();
+
 // neatlieka jokios vidinės logikos
 
 function tusciaFunkcija() {
