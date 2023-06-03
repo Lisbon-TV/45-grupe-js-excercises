@@ -45,6 +45,8 @@ console.log( daugyba( skaicius1, skaicius3 ) );
 rezultatas: teisingos reikšmės;
 */
 
+console.log('.............');
+
 function daugyba(pirmasSkaicius, antrasSkaicius) {
     return pirmasSkaicius * antrasSkaicius
 }

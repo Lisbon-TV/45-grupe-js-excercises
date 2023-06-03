@@ -19,6 +19,7 @@ console.log(banana);
 Sukurti 3 kintamuosius su teksto tipo reikšmėmis
 Po kiekvieno jų inicijavimo, išvesti į console
 */
+console.log();
 
 city = 'Vilnius';
 country = 'Lithuania';
@@ -33,28 +34,32 @@ Sukurti 3 sąrašo tipo kintamuosius su penkiomis skaičių tipo reikšmėmis
 Po kiekvieno jų inicijavimo, išvesti į console
 */
 
-age1 = 15;
-age2 = 20;
-age3 = 2;
+console.log();
 
-// ??
+grades = [7, 10, 8];
+console.log(grades);
 
-console.log();
-console.log();
-console.log();
+age = 20;
+console.log(age);
+
+stud = 1;
+console.log(stud);
+
 
 /*
 Sukurti 3 sąrašo tipo kintamuosius su penkiomis teksto tipo reikšmėmis
 Po kiekvieno jų inicijavimo, išvesti į console
 */
+console.log();
 
-flag = ('white');
+flag = ['Yellow', 'Green', 'Red'];
+console.log(flag);
+
 nationality = 'Lithuanian';
+console.log(nationality);
+
 race = 'Caucasian';
+console.log(race);
 
-// ??
-
-console.log();
-console.log();
-console.log();
+//........................
 
