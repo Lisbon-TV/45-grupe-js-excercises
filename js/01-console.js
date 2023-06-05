@@ -39,10 +39,10 @@ console.log();
 grades = [7, 10, 8];
 console.log(grades);
 
-age = 20;
+age = [20];
 console.log(age);
 
-stud = 1;
+stud = [1];
 console.log(stud);
 
 
@@ -55,10 +55,10 @@ console.log();
 flag = ['Yellow', 'Green', 'Red'];
 console.log(flag);
 
-nationality = 'Lithuanian';
+nationality = ['Lithuanian'];
 console.log(nationality);
 
-race = 'Caucasian';
+race = ['Caucasian'];
 console.log(race);
 
 //........................
