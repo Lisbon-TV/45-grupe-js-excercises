@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "for": "nodemon ./js/03-for.js",
     "function": "nodemon ./js/02-function.js",
     "console": "nodemon ./js/01-console.js",
     "dev": "nodemon",
