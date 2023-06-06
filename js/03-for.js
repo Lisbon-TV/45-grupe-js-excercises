@@ -23,20 +23,26 @@ console.clear();
 // panaudojant ciklą perrašyti tekstinio tipo kintamųjų reikšmes iš kito galo:
 // pvz.: “abcdef” -> “fedcba”
 
+// Su for:
+
 const str = 'abcdef';
 let reverseStr = '';
 
-// for (let i = str.length-1; i >= 0; i-- ); {
-//     reverseStr += str[i];
-// }
+for (let i = str.length-1; i >= 0; i-- ) {
+    reverseStr += str[i];
+}
 
-// console.log(reverseStr);
+console.log(reverseStr);
 
-// for (let i = str.length - 1; i >= 0; i-- ); {
-//     reverseStr += str.charAt(i);
-// }
+//Su char:
 
-// console.log(reverseStr);
+let MyReverseStr = '';
+
+for (let i = str.length - 1; i >= 0; i-- ) {
+    MyReverseStr += str.charAt(i);
+}
+
+console.log(MyReverseStr);
 
 
 // Su splitu:
