@@ -32,7 +32,9 @@ for (let i = str.length-1; i >= 0; i-- ) {
     reverseStr += str[i];
 }
 
+console.log(`Reverse string with 'for'`);
 console.log(reverseStr);
+console.log();
 
 //Su char:
 
@@ -42,15 +44,43 @@ for (let i = str.length - 1; i >= 0; i-- ) {
     MyReverseStr += str.charAt(i);
 }
 
+console.log(`Reverse string with 'char'`);
 console.log(MyReverseStr);
+console.log();
+
+// Reverse strin function with 'char':
+
+// function reverse() {
+//     let MyReverseStr = '';
+//     for (let i = str.length - 1; i >= 0; i-- ) {
+//         MyReverseStr += str.charAt(i);
+// }
+// console.log(MyReverseStr);
 
 
-// Su splitu:
+// Reserse string function with 'split':
+
+console.log('Reverse string with split in a function:');
+
+let reverseStr1 = (str) => {
+    let myStr =str.split('')
+    let myRev = myStr.reverse().join('');
+    return myRev; // jei consoel.log(myRev); tada pateiks 'undefined' reiksme!
+}
+
+console.log(reverseStr1(str));
+
+// Tiesiogiai su splitu:
 
 let myStr = str.split('');
-let myRev = myStr.reverse().join('');
-console.log(myRev);
+let myRev = myStr.reverse().join(''); // cia: logged into a variable!
 
+console.log();
+console.log('Tik su splitu:');
+console.log(myRev);
+// or:
+//console.log(myStr.reverse().join(''));
+console.log('.............');
 
 // Suskaičiuoti, kiek nurodytame intervale yra skaičių, kurie dalijasi be liekanos iš 3, 5 ir 7 atskirai:
 
