@@ -5,19 +5,87 @@ console.clear();
 // Suskaičiuoti ką gausime susumavus skaičius intervale tarp (imtinai):
 // 0 … 0
 
+// const start = 0;
+// const end = 0 ;
+// const step = 0;
+// // let sum = 0;
+
+// for (let i = 0; i <= 0; i = 0) {
+//     console.log('->', i, sum);
+// }
+
+// console.log(sum);
+
 // 0 … 4
+
+// const start = 0;
+// const end = 4;
+// const step = 1;
+// let sum = 0;
+
+// for (let i = start; i <= end; i += step) { 
+//     sum += i;
+//     }
+
+// console.log(sum);
 
 
 // 0 … 100
 
+// const start = 0;
+// const end = 100;
+// const step = 1;
+// let sum = 0;
+
+// for (let i = start; i <= end; i += step) { 
+//     sum += i;
+//     }
+
+// console.log(sum);
+
 
 // 574 … 815
+
+// const start = 574;
+// const end = 815;
+// const step = 1;
+// let sum = 0;
+
+// for (let i = start; i <= end; i += step) { 
+//     sum += i;
+//     }
+
+// console.log(sum);
 
 
 // -50 … 50
 
 
+// const start = -50;
+// const end = 50;
+// const step = 1;
+// let sum = 0;
+
+// for (let i = start; i <= end; i += step) { 
+//     sum += i;
+//     }
+
+// console.log(sum);
+
+
 // -70 … 30
+
+// const start = -70;
+// const end = 30;
+// const step = 1;
+// let sum = 0;
+
+// for (let i = start; i <= end; i += step) { 
+//     sum += i;
+//     }
+
+// console.log(sum);
+
 
 
 // panaudojant ciklą perrašyti tekstinio tipo kintamųjų reikšmes iš kito galo:
