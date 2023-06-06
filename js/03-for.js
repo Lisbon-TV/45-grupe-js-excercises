@@ -116,7 +116,7 @@ console.log(`Reverse string with 'char'`);
 console.log(MyReverseStr);
 console.log();
 
-// Reverse strin function with 'char':
+// Reverse string function with 'char':
 
 // function reverse() {
 //     let MyReverseStr = '';
