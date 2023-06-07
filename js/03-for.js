@@ -6,7 +6,7 @@ console.clear();
 // 0 … 0
 
 
-// CIA! Reikejo apjungti, naudojant funkcija!!!!!
+// CIA! Reikejo apjungti, iskelti viska i funkcija!!!!!
 
 function sumaIntervale(nuo, iki) {
     let suma = 0;
@@ -26,7 +26,7 @@ console.log(0, 4, '->', 10, ':', sumaIntervale(0, 4));
 console.log(-50, 50, '->', 0, ':', sumaIntervale(-50, 50));
 console.log(-70, 30, '->', 0, ':', sumaIntervale(70, 30));
 
-/*
+/* All OK on individual bases:
 
 // const start = 0;
 // const end = 0 ;
@@ -114,6 +114,7 @@ console.log(-70, 30, '->', 0, ':', sumaIntervale(70, 30));
 
 console.log('....................');
 
+*/
 
 // panaudojant ciklą perrašyti tekstinio tipo kintamųjų reikšmes iš kito galo:
 // pvz.: “abcdef” -> “fedcba”
@@ -210,20 +211,48 @@ console.log('.............');
 // Skaičių intervale tarp 0 ir 11, besidalijančių be liekanos iš 5 yra 3 vienetai.
 // Skaičių intervale tarp 0 ir 11, besidalijančių be liekanos iš 7 yra 2 vienetai.
 
-let start1 = 0;
-let end1 = 11;
+// DESTYTOJO SPENDIMAS -> Isnagrinek, kodel taip!
 
-let skaicius = 7;
-let beLiekanos = 0;
+// naudojo function:
 
-let intervalas = (start1, end, skaicius) => {
-     for(let i = start; i <= end; i++){
-         if(i % skaicius === 0){
-             beLiekanos++;
-            }
-        } return `Skaičių intervale tarp ${start1} ir ${end1}, besidalijančių be liekanos iš ${skaicius} yra ${beLiekanos} vienetai.`;
+// [0..11] / 3 -> 4
+// [0..11] / 5 -> 3
+// [0..11] / 7 -> 2
+
+function count(nuo, iki, daliklis) {
+    let kiekis = 0;
+
+    for (let i = nuo; i <= iki; i++) {
+        if (i % daliklis === 0) {
+            kiekis++;
+        }
     }
- console.log(intervalas(start1, end1, skaicius));
+
+    return `Skaičių intervale tarp ${nuo} ir ${iki}, besidalijančių be liekanos iš ${daliklis} yra ${kiekis} vienetai.`;
+}
+
+console.log(count(0, 11, 3));
+console.log(count(0, 11, 5));
+console.log(count(0, 11, 7));
+
+console.log(count(0, 10, 2));
+console.log(count(0, 10, 5));
+console.log(count(0, 10, 10));
+
+// let start1 = 0;
+// let end1 = 11;
+
+// let skaicius = 7;
+// let beLiekanos = 0;
+
+// let intervalas = (start1, end, skaicius) => {
+//      for(let i = start; i <= end; i++){
+//          if(i % skaicius === 0){
+//              beLiekanos++;
+//             }
+//         } return `Skaičių intervale tarp ${start1} ir ${end1}, besidalijančių be liekanos iš ${skaicius} yra ${beLiekanos} vienetai.`;
+//     }
+//  console.log(intervalas(start1, end1, skaicius));
 
 
 
@@ -269,7 +298,4 @@ Reiskmiu samprata:
 3 -> 3              3 ** 1
 6 -> 3 + 3          3 ** 2
 9 -> 3 + 3 + 3      3 ** 3    
-
-
-
 */
