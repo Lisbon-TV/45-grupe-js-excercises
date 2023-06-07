@@ -75,17 +75,18 @@ console.clear();
 
 // -70 … 30
 
-// const start = -70;
-// const end = 30;
-// const step = 1;
-// let sum = 0;
+const start = -70;
+const end = 30;
+const step = 1;
+let sum = 0;
 
-// for (let i = start; i <= end; i += step) { 
-//     sum += i;
-//     }
+for (let i = start; i <= end; i += step) { 
+    sum += i;
+    }
 
-// console.log(sum);
+console.log(sum);
 
+console.log('....................');
 
 
 // panaudojant ciklą perrašyti tekstinio tipo kintamųjų reikšmes iš kito galo:
@@ -164,11 +165,19 @@ console.log('.............');
 // Skaičių intervale tarp 0 ir 11, besidalijančių be liekanos iš 7 yra 2 vienetai.
 
 const multiplier = 3;
-let threeDevision = i * 3;
+// let threeDevision = i * 3;
 
-for (i = 0; i <= 11; i++ ) {
-    // if 
-}
+// for (i = 0; i <= 11; i++ ) {
+    
+
+
+
+
+//     }
+// }
+
+console.log(`Skaičių intervale tarp 0 ir 11, besidalijančių be liekanos iš ${multiplier} yra 4 vienetai.`);
+
 
 /*
 devision by 3 --> multiplication by 3,  --> 3 times X number;
