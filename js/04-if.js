@@ -126,12 +126,16 @@ if (fnLength !== lnLength) {
 
 if (fnLength >= midlLength) {
     console.log(`${fn} ir ${midl} yra vienodo ilgio, bet gali buti ir ilgesne.`); 
+} else {
+    console.log('Pirmas vardas daug trumpesnis uz antra!')
 }
 
 // kuris mažesnis arba lygus
 
 if (fnLength <= lnLength) {
     console.log(`${fn} ir ${ln} nera vienodo ilgio, bet gali buti ir trumpesne.`); 
+} else {
+    console.log('Pirmas vardas ilgesnis uz antra!')
 }
 
 
@@ -184,8 +188,22 @@ if (countriesLength !== citiesLength) {
 
 // kuris didesnis arba lygus
 
-console.log();
+if ( citiesLength >= countriesLength) {
+    console.log(`Jei ne tiek pat, - tai miestu yra daugiau, negu saliu!`); 
+    } else {
+        console.log(`Miestu tikrai yra maziau, nei saliu!`);
+    }
+
+
 
 // kuris mažesnis arba lygus
+
+if (countriesLength <= citiesLength) {
+    console.log(`Jei ne tiek pat, - tai saliu yra maziau, negu miestu!`); 
+    } else {
+        console.log(`Miestu tikrai nera yra maziau, nei saliu!`);
+    }
+
+
 
 
