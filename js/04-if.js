@@ -77,38 +77,70 @@ if (b <= a) {
 
 console.log('...........................');
 
+
+
+//.................................................\\
+
 // Išvesti teksto tipo kintamųjų ilgius
 console.log();
 
+const fn = 'Anna';
+const fnLength = fn.length;
 
+const midl = 'Kori';
+const midlLength = midl.length;
+
+const ln = 'Karenina';
+const lnLength = ln.length;
 
 // Tarpusavyje palyginti teksto tipo kintamųjų ilgius:
-
-console.log();
-
 // kuris didesnis
 
-console.log();
+if (lnLength > fnLength) {
+    console.log(`${ln} yra ilgesne uz ${fn}.`); 
+}
 
 // kuris mažesnis
 
+if (fnLength < lnLength) {
+    console.log(`${fn} yra trumpesne uz ${ln}.`); 
+}
+
 // ar jie lygūs
 
-console.log();
+if (fnLength === midlLength) {
+    console.log(`${fn} ir ${midl} yra vienodo ilgio.`); 
+} else {
+    console.log('Abu - skirtingo ilgio!');
+}
 
 // ar jie nelygūs
 
-console.log();
+if (fnLength !== lnLength) {
+    console.log(`${fn} ir ${ln} nera vienodo ilgio.`); 
+} else {
+    console.log('Abu - vienodo ilgio!');
+}
 
 // kuris didesnis arba lygus
 
-console.log();
+if (fnLength >= midlLength) {
+    console.log(`${fn} ir ${midl} yra vienodo ilgio, bet gali buti ir ilgesne.`); 
+}
 
 // kuris mažesnis arba lygus
 
-console.log();
+if (fnLength <= lnLength) {
+    console.log(`${fn} ir ${ln} nera vienodo ilgio, bet gali buti ir trumpesne.`); 
+}
+
+
+
+// ...................................................\\
 
 // Išvesti sąrašo tipo kintamųjų ilgius
+console.log('.....................');
+
 
 console.log();
 

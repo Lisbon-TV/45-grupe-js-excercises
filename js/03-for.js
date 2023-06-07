@@ -98,8 +98,10 @@ let reverseStr = '';
 
 // String index position:
 console.log('String index position:');
+
 const reverseAbc =`${str[5]}${str[4]}${str[3]}${str[2]}${str[1]}${str[0]}`;
 console.log(reverseAbc);
+
 console.log();
 
 // Su for:
@@ -110,6 +112,7 @@ for (let i = str.length-1; i >= 0; i-- ) {
 
 console.log(`Reverse string with 'for'`);
 console.log(reverseStr);
+
 console.log();
 
 //Su char:
@@ -122,6 +125,7 @@ for (let i = str.length - 1; i >= 0; i-- ) {
 
 console.log(`Reverse string with 'char'`);
 console.log(MyReverseStr);
+
 console.log();
 
 // Reverse string function with 'char':
@@ -146,12 +150,13 @@ let reverseStr1 = (str) => {
 
 console.log(reverseStr1(str));
 
+console.log();
+
 // Tiesiogiai su splitu:
 
 let myStr = str.split('');
 let myRev = myStr.reverse().join(''); // cia: logged into a variable!
 
-console.log();
 console.log('Tik su splitu:');
 console.log(myRev);
 // or:
