@@ -5,6 +5,29 @@ console.clear();
 // Suskaičiuoti ką gausime susumavus skaičius intervale tarp (imtinai):
 // 0 … 0
 
+
+// CIA! Reikejo apjungti, naudojant funkcija!!!!!
+
+function sumaIntervale(nuo, iki) {
+    let suma = 0;
+
+    for (let i = nuo; i <= iki; i++) {
+        suma += i;
+    }
+
+    return suma;
+}
+
+console.log(0, 0, '->', 0, ':', sumaIntervale(0, 0));
+console.log(0, 1, '->', 1, ':', sumaIntervale(0, 1));
+console.log(0, 2, '->', 3, ':', sumaIntervale(0, 2));
+console.log(0, 3, '->', 6, ':', sumaIntervale(0, 3));
+console.log(0, 4, '->', 10, ':', sumaIntervale(0, 4));
+console.log(-50, 50, '->', 0, ':', sumaIntervale(-50, 50));
+console.log(-70, 30, '->', 0, ':', sumaIntervale(70, 30));
+
+/*
+
 // const start = 0;
 // const end = 0 ;
 // const step = 0;
@@ -17,6 +40,9 @@ console.clear();
 // console.log(sum);
 
 // 0 … 4
+
+// for (let i = 0; i <= 4; i++) {
+//     console.log(`1-b:` + i);}
 
 // const start = 0;
 // const end = 4;
@@ -75,16 +101,16 @@ console.clear();
 
 // -70 … 30
 
-const start = -70;
-const end = 30;
-const step = 1;
-let sum = 0;
+// const start = -70;
+// const end = 30;
+// const step = 1;
+// let sum = 0;
 
-for (let i = start; i <= end; i += step) { 
-    sum += i;
-    }
+// for (let i = start; i <= end; i += step) { 
+//     sum += i;
+//     }
 
-console.log(sum);
+// console.log(sum);
 
 console.log('....................');
 
@@ -95,6 +121,12 @@ console.log('....................');
 const str = 'abcdef';
 let reverseStr = '';
 
+
+const word = 'abcdef';
+
+let reverseWord = '';
+
+console.log('Atvirksciai parasytas stringas: ' + reverseWord);
 
 // String index position:
 console.log('String index position:');
@@ -163,6 +195,8 @@ console.log(myRev);
 //console.log(myStr.reverse().join(''));
 console.log('.............');
 
+
+
 // Suskaičiuoti, kiek nurodytame intervale yra skaičių, kurie dalijasi be liekanos iš 3, 5 ir 7 atskirai:
 
 // 0 - 11
@@ -176,20 +210,47 @@ console.log('.............');
 // Skaičių intervale tarp 0 ir 11, besidalijančių be liekanos iš 5 yra 3 vienetai.
 // Skaičių intervale tarp 0 ir 11, besidalijančių be liekanos iš 7 yra 2 vienetai.
 
-const multiplier = 3;
-// let threeDevision = i * 3;
+let start1 = 0;
+let end1 = 11;
 
-// for (i = 0; i <= 11; i++ ) {
-    
+let skaicius = 7;
+let beLiekanos = 0;
+
+let intervalas = (start1, end, skaicius) => {
+     for(let i = start; i <= end; i++){
+         if(i % skaicius === 0){
+             beLiekanos++;
+            }
+        } return `Skaičių intervale tarp ${start1} ir ${end1}, besidalijančių be liekanos iš ${skaicius} yra ${beLiekanos} vienetai.`;
+    }
+ console.log(intervalas(start1, end1, skaicius));
 
 
 
 
+/// Andriaus  pvz.. ???.... pasinagrinek!
+// const start = 0;
+// const end = 11;
+// const step = 1;
+
+// let beLiekanos = 0;
+
+// for (i = start; i <= end; i++ ) {
+//     const beLiekanos = end[i];
+//     if (beLiekanos % 3 === 0); {
+//     beLiekanos++;
+//     }
+//  }
+
+//console.log(`Skaičių intervale tarp 0 ir 11, besidalijančių be liekanos iš 3 yra 4 vienetai.`);
+
+// Kesto pvz.. ???.... pasinagrinek!
+// for (let i = 0; i <= 11 ; i++) {
+//     const a = [];
+//    for (let n = 0; ai % 3; n++ ) {
+//        console.log(n);
 //     }
 // }
-
-console.log(`Skaičių intervale tarp 0 ir 11, besidalijančių be liekanos iš ${multiplier} yra 4 vienetai.`);
-
 
 /*
 devision by 3 --> multiplication by 3,  --> 3 times X number;
