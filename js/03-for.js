@@ -255,6 +255,7 @@ console.log(count(0, 10, 10));
 //  console.log(intervalas(start1, end1, skaicius));
 
 
+/// Visa kita, ignore!!! 
 
 
 /// Andriaus  pvz.. ???.... pasinagrinek!
