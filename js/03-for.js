@@ -92,10 +92,17 @@ console.log('....................');
 // panaudojant ciklą perrašyti tekstinio tipo kintamųjų reikšmes iš kito galo:
 // pvz.: “abcdef” -> “fedcba”
 
-// Su for:
-
 const str = 'abcdef';
 let reverseStr = '';
+
+
+// String index position:
+console.log('String index position:');
+const reverseAbc =`${str[5]}${str[4]}${str[3]}${str[2]}${str[1]}${str[0]}`;
+console.log(reverseAbc);
+console.log();
+
+// Su for:
 
 for (let i = str.length-1; i >= 0; i-- ) {
     reverseStr += str[i];
