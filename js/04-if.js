@@ -141,28 +141,46 @@ if (fnLength <= lnLength) {
 // Išvesti sąrašo tipo kintamųjų ilgius
 console.log('.....................');
 
+const cities = ['London', 'Vilnius', 'Kaunas', 'Klaipeda', 'Atlanta'];
+const citiesLength = cities.length;
+
+const countries = ['U.K.', 'Lietuva', 'U.S.A.'];
+const countriesLength = countries.length;
+
+console.log(citiesLength);
+console.log(countriesLength);
 
 console.log();
 
 // Tarpusavyje palyginti sąrašo tipo kintamųjų ilgius:
-
-console.log();
-
 // kuris didesnis
 
-console.log();
+if (citiesLength > countriesLength) {
+    console.log(`${citiesLength} salys yra daugiau, negu ${countriesLength} miestai!`); 
+}
 
 // kuris mažesnis
 
-console.log();
+if (countriesLength < citiesLength) {
+    console.log(`${countriesLength} salys yra maziau, negu ${citiesLength} miestai!`); 
+}
 
 // ar jie lygūs
 
-console.log();
+if (countriesLength === citiesLength) {
+    console.log(`Saliu yra tiek pat, kiek miestu!`); 
+    } else {
+        console.log(`Saliu nera tiek pat, kiek miestu!`);
+    }
+
 
 // ar jie nelygūs
 
-console.log();
+if (countriesLength !== citiesLength) {
+    console.log(`Saliu nera tiek pat, kiek miestu!`); 
+    } else {
+        console.log(`Saliu yra tiek pat, kiek miestu!`);
+    }
 
 // kuris didesnis arba lygus
 
