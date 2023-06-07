@@ -239,6 +239,28 @@ console.log(count(0, 10, 2));
 console.log(count(0, 10, 5));
 console.log(count(0, 10, 10));
 
+// Even better:
+
+/*
+function intervale(nuo, iki) {
+    return iki * (iki + 1) / 2;
+}
+
+console.log(intervale(0, 1));
+console.log(intervale(0, 2));
+console.log(intervale(0, 3));
+console.log(intervale(0, 4));
+console.log(intervale(0, 5));
+console.log(intervale(0, 10));
+console.log(intervale(0, 100));
+console.log(intervale(0, 1000));
+console.log(intervale(0, 1000_000));
+console.log(intervale(0, 1000_000_000));
+console.log(intervale(0, 1000_000_000_000));
+console.log(intervale(0, 1000_000_000_000_000));
+console.log(intervale(0, 1000_000_000_000_000_000));
+*/
+
 // let start1 = 0;
 // let end1 = 11;
 
