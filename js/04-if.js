@@ -17,16 +17,18 @@ if (arPomidoras == false) {
 console.log();
 
 // Tarpusavyje palyginti skaičiaus tipo kintamuosius:
-// kuris didesnis
+
 
 const a = 100;
 const b = 5;
 const c = 5;
 
+// // kuris didesnis
+
 if (a > b) {
-    console.log('Daugiau (a > b)');
-    } else {
-        console.log('Ne daugiau');
+    console.log(`${a} yra daugiau uz ${b}.`);
+    // } else {
+    //     console.log('Ne daugiau');
     }
 
 console.log();
@@ -35,8 +37,8 @@ console.log();
 
 if (b < a) {
     console.log(`${b} yra maziau uz ${a}.`);
-    } else {
-        console.log(`Ne, ${b} yra daugiau uz ${a}!`);
+    // } else {
+    //     console.log(`Ne, ${b} yra daugiau uz ${a}!`);
     }
 
 console.log();
@@ -44,28 +46,41 @@ console.log();
 // ar jie lygūs
 
 if (b === c) {
-    console.log(`Skaiciai ${b} ir ${b} yra lygus.`);
-    } else {
-        console.log(`Skaiciai ${b} ir ${b} yra lygus!`);
+    console.log(`Skaiciai ${b} ir ${c} yra lygus.`);
+    // } else {
+    //     console.log(`Skaiciai ${b} ir ${b} nera lygus!`);
     }
 
 console.log();
 
 // ar jie nelygūs
 
+if (a !== b) {
+    console.log(`Skaiciai ${a} ir ${b} nera lygus.`);
+}
+
 console.log();
 
 // kuris didesnis arba lygus
+
+if (a >= c) {
+    console.log(`Skaicius ${a} yra didesnis arba lygus uz ${c}.`);
+}
 
 console.log();
 
 // kuris mažesnis arba lygus
 
-console.log();
+if (b <= a) {
+    console.log(`Skaicius ${b} yra mazesnis arba lygus uz ${a}.`);
+}
+
+console.log('...........................');
 
 // Išvesti teksto tipo kintamųjų ilgius
-
 console.log();
+
+
 
 // Tarpusavyje palyginti teksto tipo kintamųjų ilgius:
 
