@@ -163,3 +163,31 @@ console.log('.............');
 // Skaičių intervale tarp 0 ir 11, besidalijančių be liekanos iš 5 yra 3 vienetai.
 // Skaičių intervale tarp 0 ir 11, besidalijančių be liekanos iš 7 yra 2 vienetai.
 
+const multiplier = 3;
+let threeDevision = i * 3;
+
+for (i = 0; i <= 11; i++ ) {
+    // if 
+}
+
+/*
+devision by 3 --> multiplication by 3,  --> 3 times X number;
+
+0 * 3 = 0  
+1 * 3 = 3
+2 * 3 = 6
+3 * 3 = 9
+4 * 3 = 12  --> outside of our interval!
+
+0 .. 4  -> increaces by 1;
+3 - > remains the same
+
+Reiskmiu samprata:
+0 -> 0        0 ** 0
+3 -> 3              3 ** 1
+6 -> 3 + 3          3 ** 2
+9 -> 3 + 3 + 3      3 ** 3    
+
+
+
+*/

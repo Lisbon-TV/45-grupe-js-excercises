@@ -8,7 +8,7 @@ console.clear();
 
 const arPomidoras = true;
 
-if (arPomidoras == true) {
+if (arPomidoras == false) {
     console.log('Pomidoras');
     } else {
         console.log('Bandykite dar karta!')
