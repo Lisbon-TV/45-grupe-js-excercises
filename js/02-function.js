@@ -198,7 +198,6 @@ function numberLength(number) {
     // jei stringas neturi nieko po kablelio:
     // if f = number.toFixed(0);
     //
-    //
     // if (NumberAsString !== number.tofixed(0)) // suzinom, kur . !
     //   return numberAsString.length - 1;  // cia atimam . (vienu perdaug)!
 
@@ -384,7 +383,17 @@ console.log( isrinktiRaides( “abc”, 4 ) );
 rezultatas: “Antrasis kintamasis turi būti ne didesnis už pateikto teksto ilgį.”
 console.log( isrinktiRaides( 1561, 2 ) );
 rezultatas: “Pirmasis kintamasis yra netinkamo tipo.”
+*/
 
+console.log('.................');
+
+function biggestNumber() {
+    return 1
+}
+
+console.log(biggestNumber([1]), '->' , 1);
+
+/*
 Funkcija pavadinimu “dalyba”:
 turi priimti du kintamuosius
 reikia sugalvoti ir įgyvendinti kuo daugiau logiškų patikrinimų, kurie padėtų apsaugoti funkciją nuo neteisingo panaudojimo
