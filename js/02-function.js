@@ -79,6 +79,33 @@ function multiply(a, b) {
     return rez;
 }
 
+function multiply(c, b) {
+    if (typeof c !== 'number' || !isFinite(c)) {
+        return 'ERROR: pirmas parametras privalo buti normalus skaicius.';
+    }
+
+    if (typeof b !== 'number' || !isFinite(b)) {
+        return 'ERROR: antras parametras privalo buti normalus skaicius.';
+    }
+
+    const rez = c * b;
+    return rez;
+}
+
+
+function multiply(a, c) {
+    if (typeof a !== 'number' || !isFinite(a)) {
+        return 'ERROR: pirmas parametras privalo buti normalus skaicius.';
+    }
+
+    if (typeof c !== 'number' || !isFinite(c)) {
+        return 'ERROR: antras parametras privalo buti normalus skaicius.';
+    }
+
+    const rez = a * c;
+    return rez;
+}
+
 console.log(multiply('labas', 2));
 console.log(multiply('5', 2));
 console.log(multiply([], 2));
@@ -140,26 +167,49 @@ console.log(); // paskaitos sprendimas:
 
 function numberLength(number) {
     if (typeof number !== 'number') {
-        return 'ERROR: duok skaiciu.';
+        return 'ERROR: duok skaiciu.';  // error boolean'ui, strings!
     }
     if (isNaN(number)) {
-        return 'ERROR: duok normalu skaiciu, o ne NaN.';
+        return 'ERROR: duok normalu skaiciu, o ne NaN.'; // tikslesne NaN zinute!
     }
-    if (number === Infinity || number === -Infinity) {
+    if (number === Infinity || number === -Infinity) { //error for infinities!
         return 'ERROR: duok normalu skaiciu, o ne begalybe.';
     }
 
+// if (number < 0);  persikelti pries const, bet nevisada gali suveikti!
+//     number *= -1;
+
+    // Pirmas zingsnis: 
     const numberAsString = '' + number;
+    // arba: const numberAsString = number.toString();
+    // vist web: js string methods.. seach.
     let size = numberAsString.length;
+    // kadangi .length turi tik strings ir arrays, 
+    // cia reikia skaiciu padaryti stringu, t.y. "sustringinti"!
+    // pirmas testas i console: console.log(numberLength(5), '->', 1);
+    // tokiu reikia bent dvieju su didesniais skaiciais!
+
+    //arba galima: (.replace tori du dominators! ka? ir i ka?)
+    // const numberToString = number.toString().replace('.','');
+    // arba:
+    // const numberto String = ('' + number).replace('.', '');
+
+    // klaseje tikrinom.. .fixedNumber
+    // jei stringas neturi nieko po kablelio:
+    // if f = number.toFixed(0);
+    //
+    //
+    // if (NumberAsString !== number.tofixed(0)) // suzinom, kur . !
+    //   return numberAsString.length - 1;  // cia atimam . (vienu perdaug)!
 
     // tikriname ar yra minusas?
-    if (number < 0) {
-        size--;
+    if (number < 0) {  // visada bus neigiami
+        size--;        // sumazinam vienu vienetu
     }
 
     // tikriname ar skaicius yra desimtainis?
-    if (number % 1 !== 0) {
-        size--;
+    if (number % 1 !== 0) {    // jei liekana 0, imanoma tik kai sveikas skaiciu!
+        size--;     // reikia sumazinti vienu vienetu!
     }
 
     return size;
@@ -167,23 +217,43 @@ function numberLength(number) {
 
 // Privalomi testai:
 
+// antras testas - boolean, grazina stringo ilgio reiksmes
+// is 'true' ir 'failse':
 console.log(numberLength(true));
 console.log(numberLength(false));
+// tada tikrinam pacio sring reiksme
 console.log(numberLength('asd'));
+// itraukiam NaN, pan, kaip boolean, 
+// naudoti atskirai if ... tikslesne zinute kodui:
 console.log(numberLength(NaN));
+// issirenkame infinities: 
 console.log(numberLength(Infinity));
 console.log(numberLength(-Infinity));
+// tada issitestuojam, undefined, 
 console.log(numberLength(undefined));
+// tuscia funcija, kaip undefined,
 console.log(numberLength());
+// tuscia array, kaip undefined;
 console.log(numberLength([]));
+// funkcija, kaip undefined;
 console.log(numberLength(numberLength));
+
+
+
 console.log('--------------------------------');
-console.log(numberLength(5), '->', 1);
+// Nauji atvejai, kurie bus klaidingi:
+
+console.log(numberLength(5), '->', 1); // no 5 skaitmuo yra 1
 console.log(numberLength(781), '->', 3);
 console.log(numberLength(37060123456), '->', 11);
+
+// Visi kiti nauji atvejai, kurie bus klaidingi:
+// Turi buti min 2 testai, pamatyti ar nera uzhardkodinti...
 console.log(numberLength(-5), '->', 1);
 console.log(numberLength(-781), '->', 3);
 console.log(numberLength(-37060123456), '->', 11);
+
+// Issitestuojam floats, t.y. decimal, kartu su minusais: 
 console.log(numberLength(3.14), '->', 3);
 console.log(numberLength(2.727), '->', 4);
 console.log(numberLength(-3.14), '->', 3);
@@ -212,7 +282,75 @@ console.log( didziausiasSkaiciusSarase( “pomidoras” ) );
 rezultatas: “Pateikta netinkamo tipo reikšmė.”
 console.log( didziausiasSkaiciusSarase( [] ) );
 rezultatas: “Pateiktas sąrašas negali būti tuščias.”
+*/
+console.clear();
 
+// Klaseje, atliktas uzduoties sprendimas:
+
+function biggestNumber(list) {
+    // VALIDACIJOS
+    if (!Array.isArray(list)) {
+        return 'ERROR: duok array tipo reiksme.';
+    }
+
+    if (list.length === 0) {
+        return 'ERROR: Pateiktas sąrašas negali būti tuščias.';
+    }
+
+    // LOGIKA
+    let max = -Infinity;
+
+    for (let i = 0; i < list.length; i++) {
+        const item = list[i];
+        if (typeof item !== 'number' || !isFinite(item)) {
+            continue;
+        }
+
+        if (item > max) {
+            max = item;
+        }
+    }
+
+    // LOGIKOS REZULTATO VALIDACIJA
+    if (max === -Infinity) {
+        return 'ERROR: array neturi nei vieno normalaus skaiciaus';
+    }
+
+    // REZULTATO GRAZINIMAS
+    return max;
+}
+
+console.log(biggestNumber(248562));
+console.log(biggestNumber('labas'));
+console.log(biggestNumber(true));
+console.log(biggestNumber(false));
+console.log(biggestNumber(biggestNumber));
+console.log(biggestNumber());
+console.log(biggestNumber(undefined));
+console.log(biggestNumber(null));
+console.log(biggestNumber({}));
+console.log('-------------------------');
+console.log(biggestNumber([]));
+console.log('-------------------------');
+console.log(biggestNumber([1]), '->', 1);
+console.log(biggestNumber([2]), '->', 2);
+console.log(biggestNumber([777]), '->', 777);
+console.log(biggestNumber([1, 2, 3]), '->', 3);
+console.log(biggestNumber([11, 22, 33]), '->', 33);
+console.log(biggestNumber([11, 22, 33, 44]), '->', 44);
+console.log(biggestNumber([-5, 78, 14, 0, 18]), '->', 78);
+console.log(biggestNumber([-1, -2, -3, -4, -5, -6, -7, -8]), '->', -1);
+console.log(biggestNumber([-333, -44, -5, -66, -777, -8]), '->', -5);
+console.log(biggestNumber([-5, -333, -44, -66, -777, -8]), '->', -5);
+console.log(biggestNumber([-333, -44, -66, -777, -8, -5]), '->', -5);
+console.log('-------------------------');
+console.log(biggestNumber(['labas']));
+console.log(biggestNumber([true, false]));
+console.log(biggestNumber([true, false, undefined, null, biggestNumber, [], {}, 'asd', '', NaN, Infinity, -Infinity]));
+console.log(biggestNumber([5, true, false, undefined, null, biggestNumber, [], {}, 'asd', '', NaN, Infinity, -Infinity]));
+
+
+/*
 Funkcija pavadinimu “isrinktiRaides”:
 priima du kintamuosius:
 pirmasis nurodo tekstą, su kuriuo reikės atlikti užduotį
