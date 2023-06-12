@@ -488,32 +488,66 @@ console.log( isrinktiRaides( 1561, 2 ) );
 rezultatas: “Pirmasis kintamasis yra netinkamo tipo.”
 */
 
-function letters(str, step) {
-    if (typeof str !== 'string'){
-        return  'Pirmas kintamasis yra netinkamo tipo.';
-    }
-
-    if (step > str.length) {
-        return 'Pirmas kintamasis yra netinkamo tipo.';
-    }
-    return '';
+function numberLength(number) {
+if (typeof number !== 'number') {
+    return 'ERROR: duok skaiciu';
+}
+if (isNaN(number)) {
+    return 'ERROR: duok normalu skaiciu, o ne NaN';
+}
+if (number === Infinity || number === -Infinity) {
+    return 'ERROR: duok normalu skaiciu, o ne begalybe';
 }
 
+const numberAsString = '' + number;
+let size = numberAsString.length;
 
+// tikriname ar yra minusas?
+    if (number < 0) {
+    size--;
+}
 
+// tikriname ar skaicius yra desimtainis?
+    if (number % 1 !== 0) {
+    size--;
+}
+    return size;
+}
 
+console.log(numberLength(true));
+console.log(numberLength(false));
+console.log(numberLength('asd'));
+console.log(numberLength(NaN));
+console.log(numberLength(Infinity));
+console.log(numberLength(-Infinity));
+console.log(numberLength(undefined));
+console.log(numberLength());
+console.log(numberLength([]));
+console.log(numberLength(numberLength));
 
-console.log('.................');
-
+console.log('--------------------------------');
+// Kodel galimi neigiami skaiciai? 
+console.log(numberLength(5), '->', 1);
+console.log(numberLength(781), '->', 3);
+console.log(numberLength(37060123456), '->', 11);
+console.log(numberLength(-5), '->', 1);
+console.log(numberLength(-781), '->', 3);
+console.log(numberLength(-37060123456), '->', 11);
+console.log(numberLength(3.14), '->', 3);
+console.log(numberLength(2.727), '->', 4);
+console.log(numberLength(-3.14), '->', 3);
+console.log(numberLength(-2.727), '->', 4);
 /*
 Funkcija pavadinimu “dalyba”:
 turi priimti du kintamuosius
-reikia sugalvoti ir įgyvendinti kuo daugiau logiškų patikrinimų, kurie padėtų apsaugoti funkciją nuo neteisingo panaudojimo
+reikia sugalvoti ir įgyvendinti kuo daugiau logiškų patikrinimų, 
+kurie padėtų apsaugoti funkciją nuo neteisingo panaudojimo
 esant blogoms sąlygoms, išvesti atitinkamą pranešimą
 esant geroms - tęsti darbą
 į atskirą kintamąjį išsaugoti apskaičiuotą dviejų skaičių dalybos reikšmę
 daliname pirmąjį skaičių iš antrojo
 grąžinti suskaičiuotą reikšmę
 TESTAI:
-sugalvoti bent 5 testus, kurie bendrai iš esmės patvirtintu gerą funkcijos veikimą
+sugalvoti bent 5 testus, kurie bendrai iš esmės patvirtintu 
+gerą funkcijos veikimą
 */
