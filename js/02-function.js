@@ -394,23 +394,87 @@ console.log('.................');
 
 // Try with max (pirmas testas)
 // function biggestNumber(list) {
-//    const max = list [0]; // cia paduos tik, jei array susidaries is vieno sk.!
+//    const max = list [0]; // cia paduos tik, jei array susidares is vieno sk.!
 //          // logika,..    
 //      return max
 // }
 
 // Try with max (antas testas)
 // function biggestNumber(list) {
-//    const max = list [list.lenght -1]; // cia paduos tik, jei array susidaries is keliu sk.!
+//    const max = list [list.lenght -1]; // cia paduos tik, jei array susidarys is keliu sk.!
 //          // logika,..    
 //      return max
 // }
+
+
+// Rimtai pradedam spresti, ziur apacioje papildomus testus... 
+function biggestNumber(list) {
+    // if (typeof list !== 'object'); { // Penktas testas
+    // if (typeof list !== 'object' || list === null) {;  // Septintas testas: Null!
+    if (!Array.isArray(list)) {  // Astuntas testas - {}, kaip atpazinti array, ar ne array! ATSIMINTI!!!!
+        return 'ERROR: duok array tipo reiksme.';
+    }
+
+    if (list.length === 0) {  // Jei array yra tuscias!
+        return 'ERROR: Pateiktas sąrašas negali būti tuščias.';
+    }
+        
+ // LOGIKA
+
+  // let max = 0;  // is pradziu isivaizduojame, kad didz. sk yra nulis!
+ let max = -Infinity;
+
+ for (let i = 0; i < list.length; i++) {
+     const item = list[i];
+     if (typeof item !== 'number' || !isFinite(item)) {
+         continue;
+     }
+
+     if (item > max) {
+         max = item;
+     }
+ }
+
+ // LOGIKOS REZULTATO VALIDACIJA
+ if (max === -Infinity) {
+     return 'ERROR: array neturi nei vieno normalaus skaiciaus';
+ }
+
+ // REZULTATO GRAZINIMAS
+ return max;
+}
+
 
 // Pirmas testas, kai array turi savyje tik viena skaiciu: 
 console.log(biggestNumber([1]), '->' , 1);
 console.log(biggestNumber([2]), '->' , 2);
 // Antras testas, kai array turi savyje daugiau skaiciu: 
 console.log(biggestNumber([1, 2, 3]), '->' , 3);
+// Trecias testas: pask masyve skaicius - didziausias:
+console.log(biggestNumber([777]), '->', 777);
+console.log(biggestNumber([1, 2, 3]), '->', 3);
+console.log(biggestNumber([11, 22, 33]), '->', 33);
+console.log(biggestNumber([11, 22, 33, 44]), '->', 44);
+// Ketvirtas testas, didziaus sk masyvo viduryje: (galutinai pakartotinai susitikrinam!)
+console.log(biggestNumber([-5, 78, 14, 0, 18]), '->', 78);
+console.log('************');
+// Tuomet reikia atlikti testai su standartiniais atmetimais: ..
+// Penktas testas, sugauna ne arrays
+console.log(biggestNumber(248562));
+console.log(biggestNumber('labas'));
+console.log(biggestNumber(true));
+console.log(biggestNumber(false));
+console.log(biggestNumber(biggestNumber));
+console.log(biggestNumber());
+console.log(biggestNumber(undefined));
+// Septintas testas, papildomos reiskmes:
+console.log(biggestNumber(null));
+// Astuntas testas, {} -tkras objektas!, jo atpazinimas yra per Array.isArray(list)  (be !)!!!!!
+console.log(biggestNumber({}));
+// 
+console.log(biggestNumber([]));
+
+//PASTABOS: susikurtin string, array atmetimu sablonus, kai string tuscias, t.t.
 
 /*
 Funkcija pavadinimu “dalyba”:
