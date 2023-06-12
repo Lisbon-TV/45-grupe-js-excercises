@@ -487,56 +487,89 @@ rezultatas: “Antrasis kintamasis turi būti ne didesnis už pateikto teksto il
 console.log( isrinktiRaides( 1561, 2 ) );
 rezultatas: “Pirmasis kintamasis yra netinkamo tipo.”
 */
+console.log(`Funkcija pavadinimu “isrinktiRaides”`);
 
-function numberLength(number) {
-if (typeof number !== 'number') {
-    return 'ERROR: duok skaiciu';
-}
-if (isNaN(number)) {
-    return 'ERROR: duok normalu skaiciu, o ne NaN';
-}
-if (number === Infinity || number === -Infinity) {
-    return 'ERROR: duok normalu skaiciu, o ne begalybe';
+function letters(str, step) {
+    if (typeof str !== 'string') {
+        return 'Pirmasis kintamasis yra netinkamo tipo.';
+    }
+
+    if (typeof step !== 'number') {
+        return 'Antrasis kintamasis yra netinkamo tipo.';
+    }
+    if (!isFinite(step)) {
+        return 'Antrasis kintamasis turi buti normalus skaicius.';
+    }
+    if (step > str.length) {
+        return 'Antrasis kintamasis turi būti ne didesnis už pateikto teksto ilgį.';
+    }
+    if (step === 0) {
+        return 'Antrasis kintamasis turi būti didesnis už nulį.';
+    }
+    if (step % 1 !== 0) {
+        return 'Antrasis kintamasis turi būti sveikasis skaicius.';
+    }
+
+    let shortText = '';
+
+    if (step > 0) {
+        for (let i = step - 1; i < str.length; i += step) {
+            shortText += str[i];
+        }
+    } else {
+        for (let i = str.length + step; i >= 0; i += step) {
+            shortText += str[i];
+        }
+    }
+
+    return shortText;
 }
 
-const numberAsString = '' + number;
-let size = numberAsString.length;
-
-// tikriname ar yra minusas?
-    if (number < 0) {
-    size--;
+{
+    console.log(letters());
+    console.log(letters(1561, 2));
+    console.log(letters(undefined, 2));
+    console.log(letters(Infinity, 2));
+    console.log(letters(NaN, 2));
+    console.log(letters(true, 2));
+    console.log(letters(false, 2));
+    console.log(letters(null, 2));
+    console.log(letters([], 2));
+    console.log(letters({}, 2));
+    console.log(letters(letters, 2));
+    console.log(letters('abc'));
+    console.log(letters('abc', undefined));
+    console.log(letters('abc', ''));
+    console.log(letters('abc', 'asd'));
+    console.log(letters('abc', true));
+    console.log(letters('abc', false));
+    console.log(letters('abc', letters));
+    console.log(letters('abc', null));
+    console.log(letters('abc', []));
+    console.log(letters('abc', {}));
+    console.log(letters('abc', Infinity));
+    console.log(letters('abc', -Infinity));
+    console.log(letters('abc', NaN));
+    console.log(letters('abc', 4));
+    console.log(letters('abc', 0));
+    console.log(letters('abcdefghijkl', 1.5));
 }
-
-// tikriname ar skaicius yra desimtainis?
-    if (number % 1 !== 0) {
-    size--;
-}
-    return size;
-}
-
-console.log(numberLength(true));
-console.log(numberLength(false));
-console.log(numberLength('asd'));
-console.log(numberLength(NaN));
-console.log(numberLength(Infinity));
-console.log(numberLength(-Infinity));
-console.log(numberLength(undefined));
-console.log(numberLength());
-console.log(numberLength([]));
-console.log(numberLength(numberLength));
 
 console.log('--------------------------------');
-// Kodel galimi neigiami skaiciai? 
-console.log(numberLength(5), '->', 1);
-console.log(numberLength(781), '->', 3);
-console.log(numberLength(37060123456), '->', 11);
-console.log(numberLength(-5), '->', 1);
-console.log(numberLength(-781), '->', 3);
-console.log(numberLength(-37060123456), '->', 11);
-console.log(numberLength(3.14), '->', 3);
-console.log(numberLength(2.727), '->', 4);
-console.log(numberLength(-3.14), '->', 3);
-console.log(numberLength(-2.727), '->', 4);
+// Kodel galimi neigiami skaiciai? Pasisskaityti array string methods on web!
+console.log(letters('abcdefg', 1), '->', 'abcdefg');
+console.log(letters('abcdefg', 2), '->', 'bdf');
+console.log(letters('abcdefghijkl', 3), '->', 'cfil');
+console.log(letters('abcdefghijkl', 4), '->', 'dhl');
+console.log(letters('abcdefghijkl', 5), '->', 'ej');
+console.log(letters('abcdefghijkl', 6), '->', 'fl');
+
+console.log(letters('abcdefg', -1), '->', 'gfedcba');
+console.log(letters('abcdefg', -2), '->', 'fdb');
+console.log(letters('abcdefghijkl', -3), '->', 'jgda');
+console.log(letters('abcdefghijkl', -4), '->', 'iea');
+console.log(letters('abcdefghijkl', -5), '->', 'hc');
+console.log(letters('abcdefghijkl', -6), '->', 'ga');
 /*
 Funkcija pavadinimu “dalyba”:
 turi priimti du kintamuosius
