@@ -163,7 +163,74 @@ console.log( skaitmenuKiekisSkaiciuje( NaN ) );
 rezultatas: “Pateikta netinkamo tipo reikšmė.”
 */
 
-console.log(); // paskaitos sprendimas:
+// Klaseje, atliktas uzduoties sprendimas:
+
+/*
+function biggestNumber(list) {
+    // VALIDACIJOS
+    if (!Array.isArray(list)) {
+        return 'ERROR: duok array tipo reiksme.';
+    }
+
+    if (list.length === 0) {
+        return 'ERROR: Pateiktas sąrašas negali būti tuščias.';
+    }
+
+    // LOGIKA
+    let max = -Infinity;
+
+    for (let i = 0; i < list.length; i++) {
+        const item = list[i];
+        if (typeof item !== 'number' || !isFinite(item)) {
+            continue;
+        }
+
+        if (item > max) {
+            max = item;
+        }
+    }
+
+    // LOGIKOS REZULTATO VALIDACIJA
+    if (max === -Infinity) {
+        return 'ERROR: array neturi nei vieno normalaus skaiciaus';
+    }
+
+    // REZULTATO GRAZINIMAS
+    return max;
+}
+
+console.log(biggestNumber(248562));
+console.log(biggestNumber('labas'));
+console.log(biggestNumber(true));
+console.log(biggestNumber(false));
+console.log(biggestNumber(biggestNumber));
+console.log(biggestNumber());
+console.log(biggestNumber(undefined));
+console.log(biggestNumber(null));
+console.log(biggestNumber({}));
+console.log('-------------------------');
+console.log(biggestNumber([]));
+console.log('-------------------------');
+console.log(biggestNumber([1]), '->', 1);
+console.log(biggestNumber([2]), '->', 2);
+console.log(biggestNumber([777]), '->', 777);
+console.log(biggestNumber([1, 2, 3]), '->', 3);
+console.log(biggestNumber([11, 22, 33]), '->', 33);
+console.log(biggestNumber([11, 22, 33, 44]), '->', 44);
+console.log(biggestNumber([-5, 78, 14, 0, 18]), '->', 78);
+console.log(biggestNumber([-1, -2, -3, -4, -5, -6, -7, -8]), '->', -1);
+console.log(biggestNumber([-333, -44, -5, -66, -777, -8]), '->', -5);
+console.log(biggestNumber([-5, -333, -44, -66, -777, -8]), '->', -5);
+console.log(biggestNumber([-333, -44, -66, -777, -8, -5]), '->', -5);
+console.log('-------------------------');
+console.log(biggestNumber(['labas']));
+console.log(biggestNumber([true, false]));
+console.log(biggestNumber([true, false, undefined, null, biggestNumber, [], {}, 'asd', '', NaN, Infinity, -Infinity]));
+console.log(biggestNumber([5, true, false, undefined, null, biggestNumber, [], {}, 'asd', '', NaN, Infinity, -Infinity]));
+*/
+
+
+console.log(); // paskaitos isnarpliotas sprendimas:
 
 function numberLength(number) {
     if (typeof number !== 'number') {
@@ -284,109 +351,6 @@ rezultatas: “Pateiktas sąrašas negali būti tuščias.”
 */
 console.clear();
 
-// Klaseje, atliktas uzduoties sprendimas:
-
-function biggestNumber(list) {
-    // VALIDACIJOS
-    if (!Array.isArray(list)) {
-        return 'ERROR: duok array tipo reiksme.';
-    }
-
-    if (list.length === 0) {
-        return 'ERROR: Pateiktas sąrašas negali būti tuščias.';
-    }
-
-    // LOGIKA
-    let max = -Infinity;
-
-    for (let i = 0; i < list.length; i++) {
-        const item = list[i];
-        if (typeof item !== 'number' || !isFinite(item)) {
-            continue;
-        }
-
-        if (item > max) {
-            max = item;
-        }
-    }
-
-    // LOGIKOS REZULTATO VALIDACIJA
-    if (max === -Infinity) {
-        return 'ERROR: array neturi nei vieno normalaus skaiciaus';
-    }
-
-    // REZULTATO GRAZINIMAS
-    return max;
-}
-
-console.log(biggestNumber(248562));
-console.log(biggestNumber('labas'));
-console.log(biggestNumber(true));
-console.log(biggestNumber(false));
-console.log(biggestNumber(biggestNumber));
-console.log(biggestNumber());
-console.log(biggestNumber(undefined));
-console.log(biggestNumber(null));
-console.log(biggestNumber({}));
-console.log('-------------------------');
-console.log(biggestNumber([]));
-console.log('-------------------------');
-console.log(biggestNumber([1]), '->', 1);
-console.log(biggestNumber([2]), '->', 2);
-console.log(biggestNumber([777]), '->', 777);
-console.log(biggestNumber([1, 2, 3]), '->', 3);
-console.log(biggestNumber([11, 22, 33]), '->', 33);
-console.log(biggestNumber([11, 22, 33, 44]), '->', 44);
-console.log(biggestNumber([-5, 78, 14, 0, 18]), '->', 78);
-console.log(biggestNumber([-1, -2, -3, -4, -5, -6, -7, -8]), '->', -1);
-console.log(biggestNumber([-333, -44, -5, -66, -777, -8]), '->', -5);
-console.log(biggestNumber([-5, -333, -44, -66, -777, -8]), '->', -5);
-console.log(biggestNumber([-333, -44, -66, -777, -8, -5]), '->', -5);
-console.log('-------------------------');
-console.log(biggestNumber(['labas']));
-console.log(biggestNumber([true, false]));
-console.log(biggestNumber([true, false, undefined, null, biggestNumber, [], {}, 'asd', '', NaN, Infinity, -Infinity]));
-console.log(biggestNumber([5, true, false, undefined, null, biggestNumber, [], {}, 'asd', '', NaN, Infinity, -Infinity]));
-
-
-/*
-Funkcija pavadinimu “isrinktiRaides”:
-priima du kintamuosius:
-pirmasis nurodo tekstą, su kuriuo reikės atlikti užduotį
-antrasis nurodo kas kelintą raidę išrinkti
-patikrinti, ar pirmasis kintamasis yra teksto tipo:
-jei ne, išvedame pranešimą “Pirmasis kintamasis yra netinkamo tipo.”
-priešingu atveju tęsiame darbą
-patikrinti, ar pirmasis kintamasis yra ne tuščias tekstas ir ne didesnis nei 100 simbolių:
-jei ne, išvedame pranešimą “Pirmojo kintamojo reikšmė yra netinkamo dydžio.”
-priešingu atveju tęsiame darbą
-patikrinti, ar antrasis kintamasis yra skaičiaus tipo:
-jei ne, išvedame pranešimą “Antrasis kintamasis yra netinkamo tipo.”
-priešingu atveju tęsiame darbą
-patikriname, ar antrojo kintamojo vertė yra didesnė už nulį:
-jei ne, išvedame pranešimą “Antrasis kintamasis turi būti didesnis už nulį.”
-priešingu atveju tęsiame darbą
-patikriname, ar antrojo kintamojo vertė yra ne didesnė už pirmojo kintamojo ilgį:
-jei ne, išvedame pranešimą “Antrasis kintamasis turi būti ne didesnis už pateikto teksto ilgį.”
-priešingu atveju tęsiame darbą
-išrenkame iš nurodyto teksto kas kelintą raidę (pagal antrojo kintamojo žingsnį)
-išrinktas raides sudėti į atskirą kintamąjį, kuris yra teksto tipo
-gražina rezultatą
-TESTAI:
-console.log( isrinktiRaides( “abcdefg”, 2 ) );
-rezultatas: “bdf”
-console.log( isrinktiRaides( “abcdefghijkl”, 3 ) );
-rezultatas: “cfil”
-console.log( isrinktiRaides( “abc”, 0 ) );
-rezultatas: “Antrasis kintamasis turi būti didesnis už nulį.”
-console.log( isrinktiRaides( “abc”, 4 ) );
-rezultatas: “Antrasis kintamasis turi būti ne didesnis už pateikto teksto ilgį.”
-console.log( isrinktiRaides( 1561, 2 ) );
-rezultatas: “Pirmasis kintamasis yra netinkamo tipo.”
-*/
-
-console.log('.................');
-
 // start with cheat:
 // function biggestNumber() {
 //     return 1
@@ -486,6 +450,60 @@ console.log(biggestNumber([true, false, undefined, null, biggestNumber, [], {}, 
 console.log(biggestNumber([5, true, false, undefined, null, biggestNumber, [], {}, 'asd', '', NaN, Infinity, -Infinity]));
 
 //PASTABOS: susikurtin string, array atmetimu sablonus, kai string tuscias, t.t.
+
+
+/*
+Funkcija pavadinimu “isrinktiRaides”:
+priima du kintamuosius:
+pirmasis nurodo tekstą, su kuriuo reikės atlikti užduotį
+antrasis nurodo kas kelintą raidę išrinkti
+patikrinti, ar pirmasis kintamasis yra teksto tipo:
+jei ne, išvedame pranešimą “Pirmasis kintamasis yra netinkamo tipo.”
+priešingu atveju tęsiame darbą
+patikrinti, ar pirmasis kintamasis yra ne tuščias tekstas ir ne didesnis nei 100 simbolių:
+jei ne, išvedame pranešimą “Pirmojo kintamojo reikšmė yra netinkamo dydžio.”
+priešingu atveju tęsiame darbą
+patikrinti, ar antrasis kintamasis yra skaičiaus tipo:
+jei ne, išvedame pranešimą “Antrasis kintamasis yra netinkamo tipo.”
+priešingu atveju tęsiame darbą
+patikriname, ar antrojo kintamojo vertė yra didesnė už nulį:
+jei ne, išvedame pranešimą “Antrasis kintamasis turi būti didesnis už nulį.”
+priešingu atveju tęsiame darbą
+patikriname, ar antrojo kintamojo vertė yra ne didesnė už pirmojo kintamojo ilgį:
+jei ne, išvedame pranešimą “Antrasis kintamasis turi būti ne didesnis už pateikto teksto ilgį.”
+priešingu atveju tęsiame darbą
+išrenkame iš nurodyto teksto kas kelintą raidę (pagal antrojo kintamojo žingsnį)
+išrinktas raides sudėti į atskirą kintamąjį, kuris yra teksto tipo
+gražina rezultatą
+TESTAI:
+console.log( isrinktiRaides( “abcdefg”, 2 ) );
+rezultatas: “bdf”
+console.log( isrinktiRaides( “abcdefghijkl”, 3 ) );
+rezultatas: “cfil”
+console.log( isrinktiRaides( “abc”, 0 ) );
+rezultatas: “Antrasis kintamasis turi būti didesnis už nulį.”
+console.log( isrinktiRaides( “abc”, 4 ) );
+rezultatas: “Antrasis kintamasis turi būti ne didesnis už pateikto teksto ilgį.”
+console.log( isrinktiRaides( 1561, 2 ) );
+rezultatas: “Pirmasis kintamasis yra netinkamo tipo.”
+*/
+
+function letters(str, step) {
+    if (typeof str !== 'string'){
+        return  'Pirmas kintamasis yra netinkamo tipo.';
+    }
+
+    if (step > str.length) {
+        return 'Pirmas kintamasis yra netinkamo tipo.';
+    }
+    return '';
+}
+
+
+
+
+
+console.log('.................');
 
 /*
 Funkcija pavadinimu “dalyba”:
