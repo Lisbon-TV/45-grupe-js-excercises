@@ -387,11 +387,30 @@ rezultatas: “Pirmasis kintamasis yra netinkamo tipo.”
 
 console.log('.................');
 
-function biggestNumber() {
-    return 1
-}
+// start with cheat:
+// function biggestNumber() {
+//     return 1
+// }
 
+// Try with max (pirmas testas)
+// function biggestNumber(list) {
+//    const max = list [0]; // cia paduos tik, jei array susidaries is vieno sk.!
+//          // logika,..    
+//      return max
+// }
+
+// Try with max (antas testas)
+// function biggestNumber(list) {
+//    const max = list [list.lenght -1]; // cia paduos tik, jei array susidaries is keliu sk.!
+//          // logika,..    
+//      return max
+// }
+
+// Pirmas testas, kai array turi savyje tik viena skaiciu: 
 console.log(biggestNumber([1]), '->' , 1);
+console.log(biggestNumber([2]), '->' , 2);
+// Antras testas, kai array turi savyje daugiau skaiciu: 
+console.log(biggestNumber([1, 2, 3]), '->' , 3);
 
 /*
 Funkcija pavadinimu “dalyba”:
