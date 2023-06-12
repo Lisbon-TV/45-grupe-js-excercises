@@ -471,8 +471,19 @@ console.log(biggestNumber(undefined));
 console.log(biggestNumber(null));
 // Astuntas testas, {} -tkras objektas!, jo atpazinimas yra per Array.isArray(list)  (be !)!!!!!
 console.log(biggestNumber({}));
-// 
+// Testas su tusciu stringu: 
 console.log(biggestNumber([]));
+// Devintas testas su neigiamais skaiciais, ribiniai atvejai, 
+// ir ar per visas pozicijas pereinam:
+console.log(biggestNumber([-1, -2, -3, -4, -5, -6, -7, -8]), '->', -1);
+console.log(biggestNumber([-333, -44, -5, -66, -777, -8]), '->', -5);
+console.log(biggestNumber([-5, -333, -44, -66, -777, -8]), '->', -5);
+console.log(biggestNumber([-333, -44, -66, -777, -8, -5]), '->', -5);
+// Desimtas (netipinis)testas, kaip viduj bordakas:
+console.log(biggestNumber(['labas']));
+console.log(biggestNumber([true, false]));
+console.log(biggestNumber([true, false, undefined, null, biggestNumber, [], {}, 'asd', '', NaN, Infinity, -Infinity]));
+console.log(biggestNumber([5, true, false, undefined, null, biggestNumber, [], {}, 'asd', '', NaN, Infinity, -Infinity]));
 
 //PASTABOS: susikurtin string, array atmetimu sablonus, kai string tuscias, t.t.
 
