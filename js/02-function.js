@@ -599,6 +599,12 @@ function dalyba(x, y) {
     if (typeof x !== 'number' || !isFinite(x) || y === 0) {
         return 'ERROR: pirmas parametras privalo buti normalus skaicius, o dalyba is nulio negalima!';
     }
+
+    // if (typeof x !== 'number' || !isFinite(x)) {
+    //     return 'ERROR: pirmas parametras privalo buti normalus skaicius.';
+    // } else if (y === 0) {
+    //         return 'ERROR: pirmas parametras privalo buti normalus skaicius, o dalyba is nulio negalima!';
+    //     }
           
     const result = x / y;
     return result;
