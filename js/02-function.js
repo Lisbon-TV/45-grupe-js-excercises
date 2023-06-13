@@ -584,3 +584,22 @@ TESTAI:
 sugalvoti bent 5 testus, kurie bendrai iš esmės patvirtintu 
 gerą funkcijos veikimą
 */
+
+console.log('..................');
+
+function dalyba(x, y) {
+    if (typeof x !== 'number' || !isFinite(x)) {
+        return 'ERROR: pirmas parametras privalo buti normalus skaicius.';
+    }
+
+    if (typeof y !== 'number' || !isFinite(y)) {
+        return 'ERROR: antras parametras privalo buti normalus skaicius.';
+    }
+
+    if (typeof y === 0) {
+        return 'ERROR: dalyba is nulio negalima.'
+    } 
+
+    const result = x / y;
+    return result;
+}
