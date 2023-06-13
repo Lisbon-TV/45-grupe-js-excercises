@@ -588,17 +588,16 @@ gerą funkcijos veikimą
 console.log('..................');
 
 function dalyba(x, y) {
-    if (typeof x !== 'number' || !isFinite(x)) {
-        return 'ERROR: pirmas parametras privalo buti normalus skaicius.';
-    }
+    // if (typeof x !== 'number' || !isFinite(x)) {
+    //     return 'ERROR: pirmas parametras privalo buti normalus skaicius.';
+    // }
 
     if (typeof y !== 'number' || !isFinite(y)) {
         return 'ERROR: antras parametras privalo buti normalus skaicius.';
     }
 
-    if (typeof x !== 'number' || !isFinite(x)) {
-    }else if (y === 0) {
-        return 'ERROR: antras parametras privalo buti normalus skaicius, o dalyba is nulio negalima!';
+    if (typeof x !== 'number' || !isFinite(x) || y === 0) {
+        return 'ERROR: pirmas parametras privalo buti normalus skaicius, o dalyba is nulio negalima!';
     }
           
     const result = x / y;
@@ -625,9 +624,21 @@ console.log(dalyba(-Infinity, 2));
 console.log(dalyba(7, NaN));
 console.log(dalyba(7, Infinity));
 console.log(dalyba(7, -Infinity));
+
+console.log('....................');
 console.log(dalyba(7, 0));
 console.log(dalyba(-5, 0));
-console.log(dalyba(NaN, 0)); /// ???? kaip apjungti?
+console.log(dalyba(NaN, 0)); 
+console.log(dalyba(Infinity, 0));
+console.log(dalyba(-Infinity, 0));
+console.log(dalyba('labas', 0));
+console.log(dalyba('5', 0));
+console.log(dalyba([], 0));
+console.log(dalyba(true, 0));
+console.log(dalyba(false, 0));
+console.log(dalyba(dalyba, 0));
+console.log(dalyba(undefined, 2));
+
 
 console.log('------------');
 console.log(dalyba(2, 2), '->', 1);
